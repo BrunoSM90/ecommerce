@@ -1,5 +1,5 @@
-<div class="container">
-  <ul>
-    <li *ngFor="let series of series_List"><a href='#'>{{series.nome}}</a></li>
-  </ul>
+<div class="collection">
+  <a class="collection-item"
+  *ngFor="let serie of series_List"
+  [routerLink]="['/serie', serie.id]">{{serie.nome}}</a>
 </div>

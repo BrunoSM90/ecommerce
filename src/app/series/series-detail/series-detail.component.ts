@@ -1,3 +1,5 @@
+import { SeriesService } from './../../services/series.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesDetailComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  serie: any;
+
+  constructor(private route: ActivatedRoute,
+              private seriesService: SeriesService
+
+  ) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.params['id'];
+    this.serie = this.seriesService.getSerie(this.id);
   }
 
 }

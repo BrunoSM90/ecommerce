@@ -14,11 +14,11 @@ export class SeriesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getList();
+    this.getSeriesList();
 
   }
 
-  getList() {
+  getSeriesList() {
     this.series_List = this.seriesService.getSeries();
   }
 

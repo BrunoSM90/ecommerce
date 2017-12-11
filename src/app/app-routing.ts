@@ -1,3 +1,4 @@
+import { SeriesDetailComponent } from './series/series-detail/series-detail.component';
 import { FilmesDetailComponent } from './filmes/filmes-detail/filmes-detail.component';
 import { BuscaComponent } from './busca/busca.component';
 import { AboutComponent } from './home/about/about.component';
@@ -15,7 +16,8 @@ const APP_ROUTES: Routes = [
     {path: 'series', component: SeriesComponent},
     {path: 'about', component: AboutComponent},
     {path: 'busca', component: BuscaComponent},
-    {path: 'filme/:id', component: FilmesDetailComponent}
+    {path: 'filme/:id', component: FilmesDetailComponent},
+    {path: 'serie/:id', component: SeriesDetailComponent}
 ];
 
 

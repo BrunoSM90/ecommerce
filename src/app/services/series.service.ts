@@ -16,4 +16,16 @@ series_List: any[] = [
     return this.series_List;
   }
 
+  getSerie(id: number) {
+    let series = this.getSeries();
+    for (let i = 0; i < series.length; i++) {
+      let serie = series[i];
+      if (serie.id = id) {
+        return serie;
+      } else {
+        return null;
+      }
+    }
+  }
+
 }
