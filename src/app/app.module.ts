@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 
 import { routing } from './app-routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilmesDetailComponent } from './filmes/filmes-detail/filmes-detail.component';
+import { SeriesDetailComponent } from './series/series-detail/series-detail.component';
+import { AboutComponent } from './home/about/about.component';
+import { BuscaComponent } from './busca/busca.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     FilmesComponent,
     SeriesComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilmesDetailComponent,
+    SeriesDetailComponent,
+    AboutComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,
