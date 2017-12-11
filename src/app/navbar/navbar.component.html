@@ -3,18 +3,10 @@
     <a href="#" class="brand-logo">Filmes e Séries</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li routerLinkActive="active"><a routerLink="">Início</a></li>
-      <li routerLinkActive="active"><a routerLink="/filmes">Sobre</a></li>
+      <li routerLinkActive="active"><a routerLink="/about">Sobre</a></li>
       <li routerLinkActive="active"><a routerLink="/filmes">Filmes</a></li>
       <li routerLinkActive="active"><a routerLink="/series">Séries</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['filme', filmeId.value]">Buscar</a></li>
-      <!--<li routerLinkActive="active"><a routerLink="/busca">Buscar por ID</a></li> -->
     </ul>
   </div>
 </nav>
-
-
-<div class="container">
-<label>Buscar filme por ID</label>
-<input #filmeId>
-</div>
 

@@ -1,5 +1,5 @@
-<div class="container">
-  <ul>
-    <li *ngFor="let movies of movies_List"><a href="#">{{movies.nome}}</a></li>
-  </ul>
-</div>
+  <div class="collection">
+    <a *ngFor="let movie of movies_List"
+    class="collection-item"
+    [routerLink]="['/filme', movie.id]">{{movie.nome}}</a>
+  </div>
