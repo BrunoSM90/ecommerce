@@ -15,6 +15,9 @@ import { FilmesDetailComponent } from './filmes/filmes-detail/filmes-detail.comp
 import { SeriesDetailComponent } from './series/series-detail/series-detail.component';
 import { AboutComponent } from './home/about/about.component';
 import { BuscaComponent } from './busca/busca.component';
+import { FilmesFilterPipe } from './pipes/filmes-filter.pipe';
+import { SeriesFilterPipe } from './pipes/series-filter.pipe';
+import { FootbarComponent } from './footbar/footbar.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { BuscaComponent } from './busca/busca.component';
     FilmesDetailComponent,
     SeriesDetailComponent,
     AboutComponent,
-    BuscaComponent
+    BuscaComponent,
+    FilmesFilterPipe,
+    SeriesFilterPipe,
+    FootbarComponent
   ],
   imports: [
     BrowserModule,
