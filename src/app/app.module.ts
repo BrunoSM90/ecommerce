@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing-module';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -33,11 +35,12 @@ import { FootbarComponent } from './footbar/footbar.component';
     BuscaComponent,
     FilmesFilterPipe,
     SeriesFilterPipe,
-    FootbarComponent
+    FootbarComponent,
   ],
   imports: [
     BrowserModule,
-    routing
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
   MoviesService,

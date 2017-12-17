@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmesComponent implements OnInit {
 
+  movieFilter = '';
+
   movies_List: string[];
 
   constructor(private moviesService: MoviesService) { }

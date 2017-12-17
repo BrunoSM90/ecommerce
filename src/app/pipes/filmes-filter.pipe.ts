@@ -5,8 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilmesFilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(items: any, name: string): any {
+    let retorno = items;
+    if (name.trim() !== '') {
+      retorno = items.filter(item => item.nome.toUpperCase().indexOf(name.toUpperCase()) !== -1);
+    }
+
+    return retorno;
   }
 
 }

@@ -1,7 +1,21 @@
-  <div class="collection">
-    <a *ngFor="let movie of movies_List"
-    class="collection-item"
-    [routerLink]="['/filme', movie.id]">{{movie.nome}}</a>
+
+  <div class="col s12 collection">
+
+    <div class="row">
+      <div class="col s2 input-field">
+        <input class="validate"
+        type="text"
+        placeholder="filtrar"
+        [(ngModel)]="movieFilter"
+        >
+      </div>
+    </div>
+
+    <div class="row">
+      <a *ngFor="let movie of movies_List | filmesFilter:movieFilter"
+      class="collection-item"
+      [routerLink]="['/filme', movie.id]">{{movie.nome}}</a>
+    </div>
   </div>
 
   <a class="waves-effect waves-light btn" routerLink="">VOLTAR</a>
