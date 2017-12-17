@@ -5,8 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SeriesFilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(items: any, nome: any): any {
+
+    let retorno = items;
+
+    if (nome.trim() !== '') {
+      retorno = items.filter( item => item.nome.toUpperCase().indexOf(nome.toUpperCase()) > -1);
+    }
+    return retorno;
   }
 
 }

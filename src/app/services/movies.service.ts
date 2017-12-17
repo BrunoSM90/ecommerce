@@ -20,7 +20,6 @@ export class MoviesService {
   }
 
   getMovie(id: number) {
-    // tslint:disable-next-line:prefer-const
     let movies = this.getMovies();
 
     for (let i = 0; i < movies.length; i++) {

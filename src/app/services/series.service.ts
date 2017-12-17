@@ -19,13 +19,11 @@ series_List: any[] = [
   getSerie(id: number) {
     let series = this.getSeries();
     for (let i = 0; i < series.length; i++) {
-      let serie = series[i];
-      if (serie.id = id) {
+      const serie = series[i];
+      if (serie.id === id) {
         return serie;
-      } else {
-        return null;
       }
+      }
+      return null;
     }
   }
-
-}

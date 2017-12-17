@@ -21,13 +21,13 @@ export class SeriesDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.inscrição = this.route.params.subscribe((params => {
-      this.id = params['id'];
-    }));
+    this.inscrição = this.route.params.subscribe((params: any) =>
+      this.id = params['id']
+    );
 
     this.serie = this.seriesService.getSerie(this.id);
 
-    if (this.serie == null) {
+    if (this.serie.id == null) {
         this.router.navigate(['']);
     }
   }

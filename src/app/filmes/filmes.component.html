@@ -2,6 +2,9 @@
   <div class="col s12 collection">
 
     <div class="row">
+      <div class="col s10">
+        <h3>Lista de Filmes</h3>
+      </div>
       <div class="col s2 input-field">
         <input class="validate"
         type="text"
@@ -18,4 +21,14 @@
     </div>
   </div>
 
-  <a class="waves-effect waves-light btn" routerLink="">VOLTAR</a>
+  <div class="row">
+    <div class="col s6">
+      <a class="waves-effect waves-light btn" routerLink="">VOLTAR</a>
+    </div>
+    <div class="col s6">
+      <a class="waves-effect waves-light btn" routerLink="novo">NOVO</a>
+    </div>
+  </div>
+<div>
+  <router-outlet></router-outlet>
+</div>

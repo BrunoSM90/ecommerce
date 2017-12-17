@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesComponent implements OnInit {
 
+  seriesFilter = '';
   series_List: string[];
 
   constructor( private seriesService: SeriesService ) { }
@@ -15,6 +16,7 @@ export class SeriesComponent implements OnInit {
   ngOnInit() {
 
     this.getSeriesList();
+    console.log(this.series_List);
 
   }
 

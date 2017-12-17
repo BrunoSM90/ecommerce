@@ -1,7 +1,22 @@
-<div class="collection">
-  <a class="collection-item"
-  *ngFor="let serie of series_List"
-  [routerLink]="['/serie', serie.id]">{{serie.nome}}</a>
+<div class="collection col s12">
+  <div class="row">
+    <div class="col s10">
+      <h4>Lista de Series</h4>
+    </div>
+    <div class="col s2 input-field">
+        <input
+        class="validate"
+        [(ngModel)]='seriesFilter'
+        type="text"
+        >
+    </div>
+  </div>
+  <div class="row">
+      <a
+      *ngFor="let serie of series_List | seriesFilter:seriesFilter"
+      class="collection-item"
+      [routerLink]="['/serie', serie.id]">{{serie.nome}}</a>
+  </div>
 </div>
 
 <a class="waves-effect waves-light btn" routerLink="">VOLTAR</a>
