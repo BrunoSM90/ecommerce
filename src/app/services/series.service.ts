@@ -17,13 +17,13 @@ series_List: any[] = [
   }
 
   getSerie(id: number) {
-    let series = this.getSeries();
+    const series = this.getSeries();
     for (let i = 0; i < series.length; i++) {
       const serie = series[i];
-      if (serie.id === id) {
+      if (serie.id == id) {
         return serie;
       }
-      }
+    }
       return null;
     }
   }

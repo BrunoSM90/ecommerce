@@ -8,7 +8,8 @@ import { FilmeFormComponent } from './filme-form/filme-form.component';
 
 const filmesRoutes: Routes = [
 
-    {path: 'filmes', component: FilmesComponent,
+    {path: 'filmes',
+    component: FilmesComponent,
     children: [{
         path: 'novo',
         component: FilmeFormComponent,
