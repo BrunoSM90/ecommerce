@@ -1,0 +1,23 @@
+<nav>
+    <div class="nav-wrapper" style="background-color: #6f345a;">
+      <a href="#" class="brand-logo">Filmes e Séries</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="row login-page">
+    <div class="input-field col s3">
+      <div class="login-box">
+      <div class="validate">
+        <input [(ngModel)]="user.login" id="login" type="text" placeholder="user">
+      </div>
+      <div class="validate">
+        <input [(ngModel)]="user.password" id="password" type="password" placeholder="password">
+      </div>
+      <a class="waves-effect waves-light btn" type="submit" (click)="fazerLogin()">ENTRAR</a>
+    </div>
+    </div>
+</div>

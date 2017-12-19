@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { NgModule,  ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +11,7 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent },
     {path: 'about', component: AboutComponent},
     {path: 'busca', component: BuscaComponent},
+    {path: 'login', component: LoginComponent}
 ];
 
 

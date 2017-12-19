@@ -1,3 +1,4 @@
+import { FilmeNotFoundComponent } from './filme-not-found/filme-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
@@ -16,7 +17,8 @@ const filmesRoutes: Routes = [
     }]
 
     },
-    {path: 'filme/:id', component: FilmesDetailComponent},
+    {path: 'filmes/:id', component: FilmesDetailComponent},
+    {path: 'naoencontrado', component: FilmeNotFoundComponent},
 ];
 
 

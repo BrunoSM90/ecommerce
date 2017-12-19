@@ -1,3 +1,4 @@
+import { LoginAuthService } from './services/login-auth.service';
 import { AppRoutingModule } from './app-routing-module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { AboutComponent } from './home/about/about.component';
 import { BuscaComponent } from './busca/busca.component';
 import { FootbarComponent } from './footbar/footbar.component';
 import { FilmeFormComponent } from './filmes/filme-form/filme-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { FilmeFormComponent } from './filmes/filme-form/filme-form.component';
     BuscaComponent,
     FootbarComponent,
     FilmeFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { FilmeFormComponent } from './filmes/filme-form/filme-form.component';
     SeriesModule
   ],
   providers: [
-
+    LoginAuthService
 ],
 
   bootstrap: [AppComponent]

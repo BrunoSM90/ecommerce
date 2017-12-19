@@ -17,7 +17,7 @@
     <div class="row">
       <a *ngFor="let movie of movies_List | filmesFilter:movieFilter"
       class="collection-item"
-      [routerLink]="['/filme', movie.id]">{{movie.nome}}</a>
+      [routerLink]="['/filmes', movie.id]">{{movie.nome}}</a>
     </div>
   </div>
 

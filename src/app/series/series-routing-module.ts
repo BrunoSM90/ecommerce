@@ -8,7 +8,7 @@ import { SeriesDetailComponent } from './series-detail/series-detail.component';
 const seriesRoutes: Routes = [
 
     {path: 'series', component: SeriesComponent},
-    {path: 'serie/:id', component: SeriesDetailComponent}
+    {path: 'series/:id', component: SeriesDetailComponent}
 ];
 
 

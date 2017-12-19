@@ -25,7 +25,7 @@ inscrição: Subscription;
     this.movie = this.movieService.getMovie(this.id);
 
     if (this.movie == null) {
-      this.router.navigate(['']);
+      this.router.navigate(['/naoencontrado']);
     }
   }
 
