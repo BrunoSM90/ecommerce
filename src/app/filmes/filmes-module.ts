@@ -1,3 +1,4 @@
+import { FilmeFormComponent } from './filme-form/filme-form.component';
 import { FilmeNotFoundComponent } from './filme-not-found/filme-not-found.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +27,8 @@ import { FilmesRoutingModule } from './filmes-routing-module';
         FilmesFilterPipe,
         FilmesComponent,
         FilmesDetailComponent,
-        FilmeNotFoundComponent
+        FilmeNotFoundComponent,
+        FilmeFormComponent
     ],
     providers: [
         MoviesService,

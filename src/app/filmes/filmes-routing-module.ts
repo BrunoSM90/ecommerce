@@ -9,7 +9,7 @@ import { FilmeFormComponent } from './filme-form/filme-form.component';
 
 const filmesRoutes: Routes = [
 
-    {path: 'filmes',
+    {path: '',
     component: FilmesComponent,
     children: [{
         path: 'novo',

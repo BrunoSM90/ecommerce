@@ -22,4 +22,8 @@ export class LoginAuthService {
     return false;
   }
 
+  usuarioAuth() {
+    return this.auth;
+  }
+
 }
