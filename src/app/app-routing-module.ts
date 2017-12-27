@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './home/about/about.component';
 import { HomeComponent } from './home/home.component';
-import { FilmesComponent } from './filmes/filmes.component';
 
 
 const appRoutes: Routes = [
@@ -14,12 +13,13 @@ const appRoutes: Routes = [
     {path: 'about', component: AboutComponent, canActivate: [AuthGuard]},
     {path: 'login', component: LoginComponent},
     {path: 'filmes', canActivate: [AuthGuard], loadChildren: 'app/filmes/filmes-module#FilmesModule'},
-    {path: 'series', canActivate: [AuthGuard], loadChildren: 'app/series/series-module#SeriesModule'}
+    {path: 'series', canActivate: [AuthGuard], loadChildren: 'app/series/series-module#SeriesModule',
+     canLoad: [AuthGuard]}
 ];
 
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
