@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './home/about/about.component';
 import { LoginComponent } from './login/login.component';
+import { MovieformComponent } from './movieform/movieform.component';
+import { SerieformComponent } from './serieform/serieform.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     AboutComponent,
     LoginComponent,
+    MovieformComponent,
+    SerieformComponent,
   ],
   imports: [
     BrowserModule,

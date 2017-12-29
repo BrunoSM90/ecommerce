@@ -17,7 +17,7 @@ const filmesRoutes: Routes = [
     }]
 
     },
-    {path: 'filmes/:id', component: FilmesDetailComponent},
+    {path: ':id', component: FilmesDetailComponent},
     {path: 'naoencontrado', component: FilmeNotFoundComponent},
 ];
 

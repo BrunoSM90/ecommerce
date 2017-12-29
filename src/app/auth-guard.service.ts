@@ -1,9 +1,7 @@
 import { LoginAuthService } from './services/login-auth.service';
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad } from '@angular/router/src/interfaces';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router/src/router_state';
 import { Observable } from 'rxjs/Observable';
-import { Router } from '@angular/router';
+import { Router, CanActivate, CanLoad, ActivatedRouteSnapshot, RouterStateSnapshot, Route } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
@@ -14,7 +12,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     if (this.authService.usuarioAuth()) {
       return true;
     }
-      this.router.navigate(['/login']);
+      this.router.navigate(['/formulario']);
       return false;
   }
 
@@ -22,7 +20,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     return this.verificarAcesso();
   }
 
-  canLoad (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable <boolean> | boolean {
+  canLoad (route: Route): Observable <boolean> | boolean {
     return this.verificarAcesso();
   }
 
