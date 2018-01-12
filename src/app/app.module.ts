@@ -13,6 +13,7 @@ import { AboutComponent } from './home/about/about.component';
 import { LoginComponent } from './login/login.component';
 import { MovieformComponent } from './movieform/movieform.component';
 import { SerieformComponent } from './serieform/serieform.component';
+import { FormdebugComponent } from './formdebug/formdebug.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SerieformComponent } from './serieform/serieform.component';
     LoginComponent,
     MovieformComponent,
     SerieformComponent,
+    FormdebugComponent,
   ],
   imports: [
     BrowserModule,

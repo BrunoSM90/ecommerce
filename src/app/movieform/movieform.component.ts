@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MovieformComponent implements OnInit {
 
   movie: any = {
-    nome: 'Arquivo X',
+    nome: null,
     duracao: 210,
     ano: 1997,
     id: 20
