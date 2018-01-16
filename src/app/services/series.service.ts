@@ -16,6 +16,8 @@ series_List: any[] = [
     return this.series_List;
   }
 
+  // Não utilizar triple equals.
+
   getSerie(id: number) {
     const series = this.getSeries();
     for (let i = 0; i < series.length; i++) {

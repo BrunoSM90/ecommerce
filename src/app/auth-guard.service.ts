@@ -9,19 +9,22 @@ export class AuthGuard implements CanActivate, CanLoad {
   constructor(private authService: LoginAuthService, private router: Router) { }
 
   verificarAcesso() {
-    if (this.authService.usuarioAuth()) {
+    /*if (this.authService.usuarioAuth()) {
       return true;
     }
       this.router.navigate(['/formulario']);
-      return false;
+      return false;*/
+      return true;
   }
 
   canActivate (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable <boolean> | boolean {
-    return this.verificarAcesso();
+    //return this.verificarAcesso();
+    return true;
   }
 
   canLoad (route: Route): Observable <boolean> | boolean {
-    return this.verificarAcesso();
+    //return this.verificarAcesso();
+    return true;
   }
 
 }

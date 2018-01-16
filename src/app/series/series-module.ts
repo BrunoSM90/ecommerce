@@ -21,7 +21,7 @@ import { SeriesComponent } from './series.component';
     declarations: [
         SeriesComponent,
         SeriesDetailComponent,
-        SeriesFilterPipe
+        SeriesFilterPipe,
     ],
     providers: [
         SeriesService

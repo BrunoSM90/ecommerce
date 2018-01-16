@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-filme-form',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmeFormComponent implements OnInit {
 
-  constructor() { }
+  movie: any = {
+    nome: null,
+    duracao: 210,
+    ano: 1997,
+    id: 20
+  };
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+
+    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+    .map(response => response)
+    .subscribe(response => {
+      console.log(response);
+    },
+    (error => console.log('error'))
+  );
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { MoviesService } from '../../services/movies.service';
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-filmes-detail',
@@ -11,7 +12,7 @@ import { MoviesService } from '../../services/movies.service';
 export class FilmesDetailComponent implements OnInit {
 
 id: number;
-movie: any;
+movie: Movie;
 inscrição: Subscription;
   constructor(private route: ActivatedRoute,
               private movieService: MoviesService,
@@ -25,7 +26,8 @@ inscrição: Subscription;
     this.movie = this.movieService.getMovie(this.id);
 
     if (this.movie == null) {
-      this.router.navigate(['/naoencontrado']);
+      this.router.navigate(['/filmes']);
+      window.alert('filme não encontrado');
     }
   }
 

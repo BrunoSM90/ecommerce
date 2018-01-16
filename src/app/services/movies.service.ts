@@ -3,9 +3,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MoviesService {
 
-  movie: any;
-  movies: any[];
-
   movies_List: any[] = [
     {id: 1, nome: 'Godzilla', duracao: 160, ano: 1999},
     {id: 2, nome: 'Scarface', duracao: 128, ano: 1979},
@@ -21,6 +18,8 @@ export class MoviesService {
 
   getMovie(id: number) {
     let movies = this.getMovies();
+
+    // Não utilizar triple equals
 
     for (let i = 0; i < movies.length; i++) {
       let movie = movies[i];

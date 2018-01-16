@@ -1,3 +1,40 @@
-<p>
-  serieform works!
-</p>
+<div class="row">
+  <i class="fa fa-pencil" aria-hidden="true"></i>
+
+<form class="col-s12" [formGroup]="form">
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input required formControlName="id" placeholder="Id" type="text" class="validate">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input
+      name="nome"
+      placeholder="Nome do Filme"
+      type="text"
+      class="validate">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input name="duracao" placeholder="Duração" type="text" class="validate">
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="input-field col s6">
+        <input name="ano" placeholder="Ano" type="text" class="validate">
+      </div>
+    </div>
+
+<button type="submit" class="btn btn-primary">Butão</button>
+
+</form>
+
+<app-formdebug [form]="form"></app-formdebug>
+
+</div>
