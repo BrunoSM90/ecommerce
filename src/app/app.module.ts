@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { MovieformComponent } from './movieform/movieform.component';
 import { SerieformComponent } from './serieform/serieform.component';
 import { FormdebugComponent } from './formdebug/formdebug.component';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FormdebugComponent } from './formdebug/formdebug.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule
   ],
   providers: [
     LoginAuthService,
