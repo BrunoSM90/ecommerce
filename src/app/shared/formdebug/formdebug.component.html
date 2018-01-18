@@ -1,6 +1,7 @@
-<div *ngIf="form">
+<br><br>
+<!--<div class="collection" *ngIf="form">
   <div>
-    <span>Detalhes do Formulário</span>
+    <span class="collection-item">Detalhes do Formulário</span>
   </div>
   <pre>
     Form Válido: {{form.valid}}
@@ -11,4 +12,10 @@
   <pre>
     Valores: {{form.value | json}}
   </pre>
+</div> -->
+<div>
+<ul *ngIf="form" class="collection">
+  <li class="collection-item">Fomulário válido: {{form.valid}}</li>
+  <li class="collection-item">Valores: {{form.value | json}}</li>
+</ul>
 </div>

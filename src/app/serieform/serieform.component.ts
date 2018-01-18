@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Serie } from '../models/serie.model';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-serieform',
@@ -21,18 +22,26 @@ export class SerieformComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      id: [null],
-      nome: [null],
+      id: [22, Validators.required],
+      nome: ['Série qualquer', Validators.required],
+      duracao: [129, Validators.required],
+      ano: [1990, [Validators.required, Validators.maxLength(4)]]
     });
   }
 
 onSubmit() {
 
-  this.http.post('https://httpbin.org/post', JSON.parse(this.form.value))
+  console.log(this.form.value);
+
+  this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
   .map(response => response)
   .subscribe
-  (response => console.log(response),
-  (error => console.log('error: ', error)));
+  (response => {
+    // this.form.reset();
+    console.log(response);
+  },
+  (error: any ) => alert('error'));
 }
+
 
 }

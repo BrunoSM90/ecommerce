@@ -1,19 +1,13 @@
 <div class="row">
   <i class="fa fa-pencil" aria-hidden="true"></i>
 
-<form class="col-s12" [formGroup]="form">
-
-  <div class="row">
-    <div class="input-field col s6">
-      <input required formControlName="id" placeholder="Id" type="text" class="validate">
-    </div>
-  </div>
+<form class="col-s12" [formGroup]="form" ngSubmit="onSubmit()">
 
   <div class="row">
     <div class="input-field col s6">
       <input
-      name="nome"
-      placeholder="Nome do Filme"
+      formControlName="id"
+      placeholder="Id"
       type="text"
       class="validate">
     </div>
@@ -21,17 +15,35 @@
 
   <div class="row">
     <div class="input-field col s6">
-      <input name="duracao" placeholder="Duração" type="text" class="validate">
+      <input
+      formControlName="nome"
+      placeholder="Nome da série"
+      type="text"
+      class="validate">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input
+      formControlName="duracao"
+      placeholder="Duração"
+      type="text"
+      class="validate">
     </div>
   </div>
 
   <div class="row">
       <div class="input-field col s6">
-        <input name="ano" placeholder="Ano" type="text" class="validate">
+        <input
+        formControlName="ano"
+        placeholder="ano"
+        type="text"
+        class="validate">
       </div>
     </div>
 
-<button type="submit" class="btn btn-primary">Butão</button>
+<button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="!form.valid">Butão</button>
 
 </form>
 
