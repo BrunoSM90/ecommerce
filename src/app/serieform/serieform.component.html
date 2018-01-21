@@ -6,6 +6,8 @@
   <div class="row">
     <div class="input-field col s6">
       <input
+      id="id"
+      [ngClass]="aplicaCssErro('id')"
       formControlName="id"
       placeholder="Id"
       type="text"
@@ -16,6 +18,7 @@
   <div class="row">
     <div class="input-field col s6">
       <input
+      [ngClass]="aplicaCssErro('nome')"
       formControlName="nome"
       placeholder="Nome da série"
       type="text"
@@ -26,6 +29,7 @@
   <div class="row">
     <div class="input-field col s6">
       <input
+      [ngClass]="aplicaCssErro('duracao')"
       formControlName="duracao"
       placeholder="Duração"
       type="text"
@@ -36,6 +40,7 @@
   <div class="row">
       <div class="input-field col s6">
         <input
+        [ngClass]="aplicaCssErro('ano')"
         formControlName="ano"
         placeholder="ano"
         type="text"

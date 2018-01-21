@@ -43,5 +43,15 @@ onSubmit() {
   (error: any ) => alert('error'));
 }
 
+verificaCampo(field) {
+  return !this.form.get(field).valid && this.form.get(field).touched;
+}
+
+aplicaCssErro(field) {
+  return {
+    'data-error="campo obrigatório"': this.verificaCampo(field),
+  };
+}
+
 
 }
