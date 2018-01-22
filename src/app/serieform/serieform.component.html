@@ -14,6 +14,7 @@
       class="validate">
     </div>
   </div>
+  <app-form-field-error [mostrarErro]="verificaCampo('id')" msgErro="Campo 'Id' é obrigatório"></app-form-field-error>
 
   <div class="row">
     <div class="input-field col s6">
@@ -25,6 +26,7 @@
       class="validate">
     </div>
   </div>
+  <app-form-field-error [mostrarErro]="verificaCampo('nome')" msgErro="Campo 'Nome' é obrigatório"></app-form-field-error>
 
   <div class="row">
     <div class="input-field col s6">
@@ -36,6 +38,8 @@
       class="validate">
     </div>
   </div>
+  <app-form-field-error [mostrarErro]="verificaCampo('duracao')" msgErro="Campo 'Duração' é obrigatório"></app-form-field-error>
+
 
   <div class="row">
       <div class="input-field col s6">
@@ -47,6 +51,7 @@
         class="validate">
       </div>
     </div>
+  <app-form-field-error [mostrarErro]="verificaCampo('ano')" msgErro="Campo 'Ano' é obrigatório"></app-form-field-error>
 
 <button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="!form.valid">Butão</button>
 

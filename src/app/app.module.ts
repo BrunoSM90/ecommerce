@@ -1,10 +1,10 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './auth-guard.service';
 import { LoginAuthService } from './services/login-auth.service';
 import { AppRoutingModule } from './app-routing-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -31,7 +31,8 @@ import { SharedModule } from './shared/shared-module';
     FormsModule,
     HttpModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     LoginAuthService,

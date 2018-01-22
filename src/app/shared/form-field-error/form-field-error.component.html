@@ -1,12 +1,10 @@
-<span class="glyphicon glyphicon-remove form-control-feedback" *ngIf="!campo.valid && campo.touched">
 
-</span>
+<div *ngIf="mostrarErro">
+    <span class="glyphicon glyphicon-remove form-control-feedback" ></span>
 
-<span class="sr-only" *ngIf="!campo.valid && campo.touched">
-Error
-</span>
+    <span class="sr-only">Error</span>
 
-<div *ngIf="!campo.valid && campo.touched"
-class="alert alert-danger"
-role="alert">Campo obrigatório
+    <div
+    class="alert alert-danger"
+    role="alert">{{msgErro}}</div>
 </div>

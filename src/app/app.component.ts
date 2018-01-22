@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   mostrarMenu = false;
 
-  constructor( private loginService: LoginAuthService) {}
+  constructor(private loginService: LoginAuthService) {}
 
   ngOnInit() {
     this.loginService.showNavbar.subscribe(

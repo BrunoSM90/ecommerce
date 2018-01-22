@@ -15,7 +15,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     ],
     exports: [
         FormdebugComponent,
-        NotfoundComponent
+        NotfoundComponent,
+        FormFieldErrorComponent
     ],
     declarations: [
         FormdebugComponent,

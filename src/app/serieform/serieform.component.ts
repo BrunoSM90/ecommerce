@@ -48,9 +48,9 @@ verificaCampo(field) {
 }
 
 aplicaCssErro(field) {
-  return {
-    'data-error="campo obrigatório"': this.verificaCampo(field),
-  };
+  /*return {
+     'has-error': this.verificaCampo(field),
+  };*/
 }
 
 

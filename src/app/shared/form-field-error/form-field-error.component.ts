@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-field-error',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-field-error.component.css']
 })
 export class FormFieldErrorComponent implements OnInit {
+
+  @Input() mostrarErro: boolean;
+  @Input() msgErro: string;
 
   constructor() { }
 
