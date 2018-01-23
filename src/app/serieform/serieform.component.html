@@ -1,10 +1,10 @@
 <div class="row">
   <i class="fa fa-pencil" aria-hidden="true"></i>
 
-<form class="col-s12" [formGroup]="form" ngSubmit="onSubmit()">
+<form class="col-xs-12" [formGroup]="form" ngSubmit="onSubmit()">
 
   <div class="row">
-    <div class="input-field col s6">
+    <div class="col-xs-6">
       <input
       id="id"
       [ngClass]="aplicaCssErro('id')"
@@ -17,7 +17,7 @@
   <app-form-field-error [mostrarErro]="verificaCampo('id')" msgErro="Campo 'Id' é obrigatório"></app-form-field-error>
 
   <div class="row">
-    <div class="input-field col s6">
+    <div class="col-xs-6">
       <input
       [ngClass]="aplicaCssErro('nome')"
       formControlName="nome"
@@ -29,7 +29,7 @@
   <app-form-field-error [mostrarErro]="verificaCampo('nome')" msgErro="Campo 'Nome' é obrigatório"></app-form-field-error>
 
   <div class="row">
-    <div class="input-field col s6">
+    <div class="col-xs-6">
       <input
       [ngClass]="aplicaCssErro('duracao')"
       formControlName="duracao"
@@ -42,7 +42,7 @@
 
 
   <div class="row">
-      <div class="input-field col s6">
+      <div class="col-xs-6">
         <input
         [ngClass]="aplicaCssErro('ano')"
         formControlName="ano"
@@ -51,9 +51,10 @@
         class="validate">
       </div>
     </div>
+
   <app-form-field-error [mostrarErro]="verificaCampo('ano')" msgErro="Campo 'Ano' é obrigatório"></app-form-field-error>
 
-<button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="!form.valid">Butão</button>
+<button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="!form.valid">SALVAR</button>
 
 </form>
 

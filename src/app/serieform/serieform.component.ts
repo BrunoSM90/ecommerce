@@ -48,9 +48,9 @@ verificaCampo(field) {
 }
 
 aplicaCssErro(field) {
-  /*return {
+  return {
      'has-error': this.verificaCampo(field),
-  };*/
+  };
 }
 
 
