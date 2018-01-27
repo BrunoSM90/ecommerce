@@ -22,4 +22,9 @@ export class SeriesComponent implements OnInit {
     this.series_List = this.seriesService.getSeries();
   }
 
+  openModal() {
+    console.log('a');
+  }
+
 }
+

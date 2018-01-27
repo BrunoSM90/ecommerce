@@ -1,6 +1,6 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './auth-guard.service';
-import { LoginAuthService } from './services/login-auth.service';
+import { LoginAuthService } from './login-auth.service';
 import { AppRoutingModule } from './app-routing-module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';

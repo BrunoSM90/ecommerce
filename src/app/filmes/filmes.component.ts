@@ -1,5 +1,6 @@
 import { MoviesService } from './../services/movies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-filmes',
@@ -8,18 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmesComponent implements OnInit {
 
+  @ViewChild('newMovieModal') newMovieModal;
+
   movieFilter = '';
 
   movies_List: string[];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getMovies();
   }
 
-getMovies() {
-  this.movies_List = this.moviesService.getMovies();
-}
+  getMovies() {
+    this.movies_List = this.moviesService.getMovies();
+  }
+
+  doNothing() {
+    console.log('oi');
+  }
+
+  openModal() {
+    this.modalService.open(this.newMovieModal);
+  }
 
 }
