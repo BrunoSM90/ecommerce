@@ -1,5 +1,6 @@
 import { SeriesService } from './../services/series.service';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-series',
@@ -11,7 +12,7 @@ export class SeriesComponent implements OnInit {
   seriesFilter = '';
   series_List: string[];
 
-  constructor( private seriesService: SeriesService ) { }
+  constructor( private seriesService: SeriesService, private modalService: NgbModal ) { }
 
   ngOnInit() {
 
@@ -20,10 +21,6 @@ export class SeriesComponent implements OnInit {
 
   getSeriesList() {
     this.series_List = this.seriesService.getSeries();
-  }
-
-  openModal() {
-    console.log('a');
   }
 
 }

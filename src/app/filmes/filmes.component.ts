@@ -29,8 +29,4 @@ export class FilmesComponent implements OnInit {
     console.log('oi');
   }
 
-  openModal() {
-    this.modalService.open(this.newMovieModal);
-  }
-
 }
