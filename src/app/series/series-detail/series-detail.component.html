@@ -1,8 +1,16 @@
-<ul class="collection with-header">
-    <li class="collection-header"><h4>Nome da série: {{serie?.nome}}</h4></li>
-    <li class="collection-item">Nrº de episódios da série: {{serie?.episodios}}</li>
-    <li class="collection-item">Ano da série: {{serie?.ano}}</li>
-    <li class="collection-item">Id da série: {{serie?.id}}</li>
-</ul>
+<div class="row">
+    <div class="col-md-12" style="margin-bottom: 20px;">
+        <ul class="list-group">
+            <li class="list-group-item active"><h4>{{serie?.nome}}</h4></li>
+            <li class="list-group-item">Ano da série: {{serie?.ano}}</li>
+            <li class="list-group-item">Nrº de episódios da série: {{serie?.episodios}}</li>
+            <li class="list-group-item">Id: {{movie?.id}}</li>
+        </ul>
+    </div>
+</div>
 
-<a class="waves-effect waves-light btn" routerLink="/series">VOLTAR</a>
+<div class="row">
+    <div class="col-md-12">
+        <button class="class=btn btn-dark" routerLink="/series">VOLTAR</button>
+    </div>
+</div>

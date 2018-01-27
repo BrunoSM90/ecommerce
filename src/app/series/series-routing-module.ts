@@ -4,10 +4,13 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { SeriesComponent } from './series.component';
 import { SeriesDetailComponent } from './series-detail/series-detail.component';
+import { SerieformComponent } from './serieform/serieform.component';
 
 const seriesRoutes: Routes = [
 
-    {path: '', component: SeriesComponent},
+    {path: '', component: SeriesComponent, children: [
+       { path: 'novo', component: SerieformComponent }
+    ]},
     {path: ':id', component: SeriesDetailComponent},
 ];
 

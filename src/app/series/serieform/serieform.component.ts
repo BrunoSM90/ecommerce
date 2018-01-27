@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Serie } from '../models/serie.model';
 import 'rxjs/add/operator/map';
+import { Serie } from '../../models/serie.model';
 
 @Component({
   selector: 'app-serieform',
@@ -33,14 +33,19 @@ onSubmit() {
 
   console.log(this.form.value);
 
-  this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
-  .map(response => response)
-  .subscribe
-  (response => {
-    // this.form.reset();
-    console.log(response);
-  },
-  (error: any ) => alert('error'));
+  if (this.form.valid) {
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
+    .map(response => response)
+    .subscribe
+    (response => {
+      // this.form.reset();
+      console.log(response);
+    },
+    (error: any ) => alert('error'));
+  } else {
+    window.alert('Formulário inválido');
+    // this.verificaValidacoesForm(this.form);
+  }
 }
 
 verificaCampo(field) {
@@ -52,6 +57,18 @@ aplicaCssErro(field) {
      'has-error': this.verificaCampo(field),
   };
 }
+
+/*verificaValidacoesForm(form: FormGroup) {
+  Object.keys(form.controls).forEach(field => {
+    console.log(field);
+    const controls = this.form.get(field);
+    controls.markAsDirty();
+
+    if (controls instanceof FormGroup) {
+      this.verificaValidaçõesForm(controls);
+    }
+  });
+} */
 
 
 }

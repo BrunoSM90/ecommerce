@@ -39,18 +39,35 @@ export class FilmeFormComponent implements OnInit {
     return {'has-error': this.fieldValidate(field)};
   }
 
-  onSubmit(form) {
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form);
 
-    console.log(form);
+      this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
+      .map(response => response)
+      .subscribe(response => {
+        this.form.reset();
+        console.log(response);
+      },
+      (error => console.log('error'))
+    );
+    } else {
+      window.alert('Formulário Inválido');
+      // this.verificaValidacoesForm(form);
+    }
 
-    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    .map(response => response)
-    .subscribe(response => {
-      this.form.reset();
-      console.log(response);
-    },
-    (error => console.log('error'))
-  );
   }
+
+  /*verificaValidacoesForm(form: FormGroup) {
+  Object.keys(form.controls).forEach(field => {
+    console.log(field);
+    const controls = this.form.get(field);
+    controls.markAsDirty();
+
+    if (controls instanceof FormGroup) {
+      this.verificaValidacoesForm(controls);
+    }
+  });
+} */
 
 }
