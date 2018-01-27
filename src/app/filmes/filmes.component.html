@@ -1,34 +1,49 @@
-
-  <div class="col s12 collection">
-
-    <div class="row">
-      <div class="col s10">
-        <h3>Lista de Filmes</h3>
-      </div>
-      <div class="col s2 input-field">
-        <input class="validate"
-        type="text"
-        placeholder="filtrar"
-        [(ngModel)]="movieFilter"
-        >
-      </div>
+<div class="col-12">
+  <div class="row" style="margin-bottom: 10px; margin-top: 17px;">
+    <div class="col-s8">
+      <h3>Lista de Filmes</h3>
     </div>
 
-    <div class="row">
-      <a *ngFor="let movie of movies_List | filmesFilter:movieFilter"
-      class="collection-item"
-      [routerLink]="['/filmes', movie.id]">{{movie.nome}}</a>
+    <div class="col-4">
+      <div class="input-group">
+          <input
+          type="text"
+          class="form-control"
+          placeholder="filtrar"
+          [(ngModel)]="movieFilter">
+
+          <div class="input-group-append">
+            <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col s6">
-      <a class="waves-effect waves-light btn" routerLink="">VOLTAR</a>
+
+
+    <div class="col-12">
+      <ul class="list-group">
+      <li><a *ngFor="let movie of movies_List | filmesFilter:movieFilter; let a = index"
+        class="list-group-item list-group-item-action"
+        [ngClass]=" {'list-group-item-success' : a%2 == 0, 'list-group-item-light' : a%2 != 0} "
+        [routerLink]="['/filmes', movie.id]">{{movie.nome}}
+      </a></li>
+      </ul>
     </div>
-    <div class="col s6">
-      <a class="waves-effect waves-light btn" routerLink="novo">NOVO</a>
+
+
+      <div class="col-12" style="margin-top: 10px;">
+          <div class="row">
+        <div class="col-6">
+          <button class="btn btn-dark" type="button" routerLink="">Voltar</button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-dark" type="button" routerLink="novo">Novo</button>
+        </div>
+      </div>
     </div>
+
   </div>
-<div>
-  <router-outlet></router-outlet>
-</div>
+
+
+<!-- Inserir modal de filme novo -->
