@@ -1,6 +1,6 @@
-import { MoviesService } from './../services/movies.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { MoviesService } from '../shared/services/movies.service';
 
 @Component({
   selector: 'app-filmes',
@@ -26,7 +26,8 @@ export class FilmesComponent implements OnInit {
   }
 
   doNothing() {
-    console.log('oi');
+    // console.log('oi');
+    console.log(this.movieFilter);
   }
 
 }

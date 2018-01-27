@@ -1,6 +1,6 @@
-import { SeriesService } from './../services/series.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SeriesService } from '../shared/services/series.service';
 
 @Component({
   selector: 'app-series',

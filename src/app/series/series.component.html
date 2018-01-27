@@ -23,7 +23,7 @@
 
     <div class="col-12">
       <ul class="list-group">
-        <li><a *ngFor="let serie of series_List | seriesFilter:seriesFilter; let a = index"
+        <li><a *ngFor="let serie of series_List | seriesFilter: seriesFilter; let a = index"
             class="list-group-item list-group-item-action"
             [ngClass]=" {'list-group-item-success' : a%2 == 0, 'list-group-item-light' : a%2 != 0} "
             [routerLink]="['/series', serie.id]">{{serie.nome}}

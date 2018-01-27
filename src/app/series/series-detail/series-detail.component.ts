@@ -1,8 +1,8 @@
-import { SeriesService } from './../../services/series.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Serie } from '../../models/serie.model';
+import { SeriesService } from '../../shared/services/series.service';
 
 @Component({
   selector: 'app-series-detail',
