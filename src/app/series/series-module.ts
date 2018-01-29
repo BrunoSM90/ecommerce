@@ -1,3 +1,4 @@
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared-module';
@@ -11,7 +12,9 @@ import { SerieformComponent } from './serieform/serieform.component';
 @NgModule ({
     imports: [
         SeriesRoutingModule,
-        SharedModule
+        SharedModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [],
     declarations: [
