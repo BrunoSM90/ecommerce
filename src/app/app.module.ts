@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './home/about/about.component';
 import { LoginComponent } from './login/login.component';
+import { ProdutosComponent } from './products/produtos/produtos.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -23,6 +26,9 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     AboutComponent,
     LoginComponent,
+    ProdutosComponent,
+    PaymentComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

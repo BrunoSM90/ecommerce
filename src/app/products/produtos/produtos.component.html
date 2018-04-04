@@ -1,0 +1,41 @@
+<div class="container" style="margin-top: 15px">
+  <div class="row">
+    <div *ngFor="let item of product_List" class="col-xs-12 product-list">
+      <div class="product-item">
+        <h3 style="cursor: pointer; color: white;" (click)="showItemDetails(item)">{{item.nome}}</h3>
+        <div style="color: #fff8d2">
+          <span >{{item.descricao}}</span>
+        </div>
+        <div style="color: #fff8d2">
+          <span >Preço: R${{item.preco}}</span>
+          <button class="btn btn-primary btn-lg active" (click)="openListModal(item);"><i class="fas fa-cart-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #addToListModal>
+    <div class="modal-header" style="text-align: center">
+      <span>Atenção!</span>
+    </div>
+    <div class="modal-body">
+      <p>Você deseja adicionar este item ao carrinho de compras?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
+      <button class="btn btn-outline-success pull-left" (click)="addToCart()">Adicionar</button>
+    </div>
+</ng-template>
+
+<ng-template #productDetailModal>
+    <div class="modal-header" style="text-align: center">
+      {{selectedProduct.nome}}
+    </div>
+    <div class="modal-body">
+      {{selectedProduct.descricao}}
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
+    </div>
+</ng-template>

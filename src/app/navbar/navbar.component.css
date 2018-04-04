@@ -5,3 +5,14 @@
 .nav-item a {
     color: cornsilk;
 }
+
+.cart-component {
+    color: cornsilk;
+    margin-top: 10px;
+}
+
+.product-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

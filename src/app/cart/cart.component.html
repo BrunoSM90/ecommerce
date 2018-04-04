@@ -1,0 +1,59 @@
+<span (click)="openShoppingCart()" style="color: white"><i class="fas fa-cart-plus"></i></span>
+
+<ng-template #shoppingCartModal>
+    <div class="modal-header">
+      <h2>Carrinho de compras</h2>
+    </div>
+    <div class="modal-body" style="text-align: center">
+      <div *ngIf="cart_List.length > 0" class="list-group">
+        <ul>
+            <li class="list-group-item" *ngFor="let item of cart_List">{{item.nome}}<span (click)="removeFromCartModalOpen(item)"><i style="margin-left: 15px; color: red;" class="fas fa-times"></i></span></li>
+        </ul>
+        <div>
+          O total dos produtos é: R$ {{total}}
+        </div>
+        <div>
+          <span><strong>Insira seu CEP</strong></span>
+          <input type="text">
+          <span>Frete: {{frete}}</span>
+        </div>
+      </div>
+      <div>
+        Total da compra: R${{frete + total}}
+      </div>
+      <div>
+          <span *ngIf="cart_List.length == 0"><strong>Seu carrinho de compras está vazio.</strong></span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="closeModal()" class="btn btn-outline-primary pull-left">Fechar</button>
+      <button (click)="calculateDeliveryModalOpen()" class="btn btn-outline-primary pull-left">Enviar pagamento</button>
+    </div>
+</ng-template>
+
+<ng-template #removeFromCartModal>
+    <div class="modal-header">
+      <h2>Aviso!</h2>
+    </div>
+    <div class="modal-body" style="text-align: center">
+      <div>
+          <span><strong>Você deseja remover este item do carrinho:</strong></span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="closeModal()" class="btn btn-outline-primary pull-left">Fechar</button>
+      <button (click)="removeFromCart()" class="btn btn-outline-primary pull-left">Confirmar</button>
+    </div>
+</ng-template>
+
+<ng-template #calculateDeliveryModal>
+    <div class="modal-header">
+      <h2>Pagamento</h2>
+    </div>
+    <div class="modal-body" style="text-align: center">
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</ng-template>

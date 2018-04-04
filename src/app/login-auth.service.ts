@@ -11,7 +11,7 @@ export class LoginAuthService {
   constructor( private router: Router) { }
 
   fazerLogin(user) {
-    if ((user.login === 'bruno.mazzola') && (user.password === 'lilica21')) {
+    if ((user.login) && (user.password)) {
       this.auth = true;
       this.showNavbar.emit(true);
       this.router.navigate(['/']);
