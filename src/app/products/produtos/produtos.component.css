@@ -28,3 +28,19 @@
     margin-top: 11px;
     font-size: 22px;
 }
+
+.modal-button {
+    width: 80%;
+    max-width: 80%;
+}
+
+.product-input {
+    margin-right: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.page-img {
+    float: right;
+    margin-right: 86px;
+}

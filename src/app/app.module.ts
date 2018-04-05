@@ -1,7 +1,5 @@
 import { ProductPipe } from './shared/pipes/product.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthGuard } from './auth-guard.service';
-import { LoginAuthService } from './login-auth.service';
 import { AppRoutingModule } from './app-routing-module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,9 +11,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './home/about/about.component';
-import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './products/produtos/produtos.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductService } from './shared/services/product.service';
+import { FootbarComponent } from './footbar/footbar/footbar.component';
 
 
 
@@ -25,10 +24,10 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     NavbarComponent,
     AboutComponent,
-    LoginComponent,
     ProdutosComponent,
     CartComponent,
-    ProductPipe
+    ProductPipe,
+    FootbarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +38,7 @@ import { CartComponent } from './cart/cart.component';
     NgbModule.forRoot()
   ],
   providers: [
-    LoginAuthService,
-    AuthGuard
+    ProductService
 ],
 
   bootstrap: [AppComponent]

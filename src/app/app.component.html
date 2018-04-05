@@ -1,6 +1,10 @@
 <!--<app-navbar *ngIf="mostrarMenu"></app-navbar>-->
-<app-navbar *ngIf="true"></app-navbar>
+<div>
+    <app-navbar id="top"></app-navbar>
+</div>
 
 <router-outlet></router-outlet>
 
-<!--<app-footbar></app-footbar>-->
+<div style="margin-top: 200px;">
+    <app-footbar id="bottom"></app-footbar>
+</div>

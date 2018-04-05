@@ -1,35 +1,48 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { ProductService } from './../../shared/services/product.service';
 import { Observable } from 'rxjs/Observable';
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { Subscription} from 'rxjs/Subscription';
-import { ProductService } from '../../shared/services/product.service';
 import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-produtos',
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css'],
-  providers: [ProductService]
+  providers: []
 })
 export class ProdutosComponent implements OnInit {
 
   /* Modais */
   @ViewChild('productDetailModal') productDetailModal;
   @ViewChild('addToListModal') addToListModal;
+  @ViewChild('cartFeedbackModal') cartFeedbackModal;
 
   /* Variáveis */
+  productService: ProductService;
   imgSource: string;
   selectedProduct: any;
-  product_List: any[];
   productFilter = '';
+  successCartOperation: boolean;
+
+  /* Listas */
+  product_List: any[];
+  cart_List: any[] = [];
 
   /* Variáveis privadas */
   private modalRef: NgbModalRef;
-  private modalRefAux: NgbModalRef;
 
-  constructor(private productService: ProductService, private modalService: NgbModal) { }
+  constructor(_productService: ProductService, private modalService: NgbModal) {
+    this.productService = _productService;
+  }
 
   ngOnInit() {
     this.getProducts();
+
+    ProductService.emitCartOperation.subscribe(response => {
+      this.successCartOperation = response;
+      this.modalRef = this.modalService.open(this.cartFeedbackModal);
+    });
+
   }
 
   showItemDetails(item, index) {
@@ -44,13 +57,7 @@ export class ProdutosComponent implements OnInit {
 
   addToCart() {
     this.closeModal();
-    const result = this.productService.addItemToCart(this.selectedProduct);
-
-    if (result) {
-      window.alert('Seu produto foi inserido com sucesso.');
-    } else {
-      window.alert('O produto já consta no carrinho.');
-    }
+    this.productService.addItemToCart(this.selectedProduct);
   }
 
   getProducts() {

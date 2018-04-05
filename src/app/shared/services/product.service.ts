@@ -1,9 +1,13 @@
 import { Product } from './../../models/product.model';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class ProductService {
+
+static emitCartChange = new EventEmitter();
+static emitCartOperation = new EventEmitter();
 
 product_List: Product[] = [
     // tslint:disable-next-line:max-line-length
@@ -54,7 +58,7 @@ constructor() { }
   }
 
   getShoppingCartList() {
-    return this.product_List;
+    return this.shoppingCart_List;
   }
 
   getTaxList() {
@@ -62,25 +66,26 @@ constructor() { }
   }
 
   /* Cart Services Start */
-  addItemToCart(item) {
-    let retorno;
-    const check = this.shoppingCart_List.indexOf(item);
-      if (check == -1) {
-        this.shoppingCart_List.push(item);
-        retorno = true;
-      } else {
-        retorno = false;
-      }
+  addItemToCart(item: any) {
+    const obj = {
+      object: item,
+      method: 'add'
+    };
 
-    return retorno;
-  }
+  ProductService.emitCartChange.emit(obj);
+}
 
-removeItemFromCart(item) {
-  this.product_List.map((next, index) => {
-    if (next.id === item.id) {
-      this.product_List.splice(index, 1);
-    }
-  });
+removeItemFromCart(item: any) {
+  const obj = {
+    object: item,
+    method: 'remove'
+  };
+
+  ProductService.emitCartChange.emit(obj);
+}
+
+checkCartOperation(success: boolean) {
+  ProductService.emitCartOperation.emit(success);
 }
 
 /* Cart Services End */

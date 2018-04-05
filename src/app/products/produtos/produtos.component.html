@@ -1,7 +1,17 @@
-<div class="container" style="margin-top: 15px">
-  <div>
-    <input type="text" placeholder="filtrar" [(ngModel)]="productFilter">
+<div class="container" style="margin-top: 110px">
+  <div class="row" id="index-img">
+    <div class="col page-img">
+        <img src="assets\images\nexfar_logo.jpg" style="float: right">
+    </div>
+      <div class="col-4 product-input">
+          <input class="form-control"
+          style="width: 76%"
+          type="text"
+          placeholder="filtrar produto"
+          [(ngModel)]="productFilter">
+      </div>
   </div>
+
   <div class="row">
     <div *ngFor="let item of product_List | productPipe:productFilter; let a = index" class="col-xs-12 product-list">
       <div class="product-item">
@@ -12,15 +22,15 @@
           </div>
         </div>
         <div style="color: #fff8d2">
-          <div class="row">
-            <div class="col">
+          <div class="row" style="padding-left: 30px;">
+            <div class="col-4">
                 <span style="font-size: 25px">Preço: R${{item.preco}}</span>
             </div>
-            <div class="col" style="cursor: pointer; padding-top: 15px; color: #0062cc;">
-              <span (click)="showItemDetails(item, a)"><strong>Detalhar produto</strong></span>
+            <div class="col-4" style="cursor: pointer; color: #0062cc;">
+              <span (click)="showItemDetails(item, a)" style="font-size: 23px;"><strong>Detalhar produto</strong></span>
             </div>
-            <div class="col">
-                <button class="btn btn-primary btn-lg active" (click)="openListModal(item);"><i class="fas fa-cart-plus"></i></button>
+            <div class="col-4" style="padding: 13px;padding-top: 5px;">
+              <button class="btn btn-primary btn-lg active" style="font-size: 30px" (click)="openListModal(item);"><i class="fas fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
@@ -30,21 +40,31 @@
 </div>
 
 <ng-template #addToListModal>
-    <div class="modal-header" style="text-align: center">
-      <span style="color: red;"><strong>Atenção!</strong></span>
+    <div class="modal-header" style="text-align: center;">
+      <div style="width: 100%">
+        <h2 style="color: red;">Atenção!</h2>
+      </div>
     </div>
     <div class="modal-body">
       <p style="text-align: center;"><strong>Você deseja adicionar o item {{selectedProduct.nome}} ao carrinho de compras?</strong></p>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
-      <button class="btn btn-outline-success pull-left" (click)="addToCart()">Adicionar</button>
+      <div class="container">
+        <div class="row" style="padding-left: 30px;">
+          <div class="col">
+              <button class="btn btn-outline-danger modal-button" (click)="closeModal()">Fechar</button>
+          </div>
+          <div class="col">
+              <button class="btn btn-outline-success modal-button" (click)="addToCart()">Adicionar</button>
+          </div>
+        </div>
+      </div>
     </div>
 </ng-template>
 
 <ng-template #productDetailModal>
     <div class="modal-header" style="text-align: center">
-      <div>
+      <div style="width: 100%;">
           <h1>{{selectedProduct.nome}}</h1>
       </div>
     </div>
@@ -80,6 +100,33 @@
     </div>
   </div>
     <div class="modal-footer">
-      <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
+      <button class="btn btn-outline-danger" (click)="closeModal()">Fechar</button>
+    </div>
+</ng-template>
+
+<ng-template #cartFeedbackModal>
+    <div class="modal-header" style="text-align: center;">
+      <div style="width: 100%">
+        <h2 *ngIf="!successCartOperation">Aviso!</h2>
+        <h2 *ngIf="successCartOperation">Sucesso!</h2>
+      </div>
+    </div>
+    <div class="modal-body" style="text-align: center">
+      <div>
+          <span *ngIf="successCartOperation"><strong>O item foi adicionado ao carrinho.</strong></span>
+          <div *ngIf="!successCartOperation">
+              <span><strong>Não foi possível adicionar item ao carrinho.</strong></span>
+              <span>Verifique se o produto já está no carrinho ou tente novamente mais tarde.</span>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="container">
+        <div class="row" style="text-align: center;">
+          <div class="col">
+            <button (click)="closeModal()" class="btn btn-outline-danger modal-button">Fechar</button>
+          </div>
+        </div>
+      </div>
     </div>
 </ng-template>

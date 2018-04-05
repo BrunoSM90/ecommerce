@@ -1,4 +1,3 @@
-import { LoginAuthService } from './login-auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,13 +10,8 @@ export class AppComponent implements OnInit {
 
   mostrarMenu = false;
 
-  constructor(private loginService: LoginAuthService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.loginService.showNavbar.subscribe(
-      response => {
-        this.mostrarMenu = response;
-      }
-    );
   }
 }
