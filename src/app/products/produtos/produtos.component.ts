@@ -17,10 +17,14 @@ export class ProdutosComponent implements OnInit {
   @ViewChild('addToListModal') addToListModal;
 
   /* Variáveis */
+  imgSource: string;
   selectedProduct: any;
   product_List: any[];
+  productFilter = '';
 
+  /* Variáveis privadas */
   private modalRef: NgbModalRef;
+  private modalRefAux: NgbModalRef;
 
   constructor(private productService: ProductService, private modalService: NgbModal) { }
 
@@ -28,7 +32,7 @@ export class ProdutosComponent implements OnInit {
     this.getProducts();
   }
 
-  showItemDetails(item) {
+  showItemDetails(item, index) {
     this.selectedProduct = item;
     this.modalRef = this.modalService.open(this.productDetailModal);
   }
@@ -39,8 +43,14 @@ export class ProdutosComponent implements OnInit {
   }
 
   addToCart() {
-    this.productService.addItemToCart(this.selectedProduct);
     this.closeModal();
+    const result = this.productService.addItemToCart(this.selectedProduct);
+
+    if (result) {
+      window.alert('Seu produto foi inserido com sucesso.');
+    } else {
+      window.alert('O produto já consta no carrinho.');
+    }
   }
 
   getProducts() {

@@ -1,14 +1,28 @@
 <div class="container" style="margin-top: 15px">
+  <div>
+    <input type="text" placeholder="filtrar" [(ngModel)]="productFilter">
+  </div>
   <div class="row">
-    <div *ngFor="let item of product_List" class="col-xs-12 product-list">
+    <div *ngFor="let item of product_List | productPipe:productFilter; let a = index" class="col-xs-12 product-list">
       <div class="product-item">
-        <h3 style="cursor: pointer; color: white;" (click)="showItemDetails(item)">{{item.nome}}</h3>
-        <div style="color: #fff8d2">
-          <span >{{item.descricao}}</span>
+        <h3 style="cursor: pointer; color: white;" (click)="showItemDetails(item, a)">{{item.nome}}</h3>
+        <div class="row" style="color: #fff8d2; margin-bottom: 15px;">
+          <div class="col product-description">
+            <span>{{item.descricao}}</span>
+          </div>
         </div>
         <div style="color: #fff8d2">
-          <span >Preço: R${{item.preco}}</span>
-          <button class="btn btn-primary btn-lg active" (click)="openListModal(item);"><i class="fas fa-cart-plus"></i></button>
+          <div class="row">
+            <div class="col">
+                <span style="font-size: 25px">Preço: R${{item.preco}}</span>
+            </div>
+            <div class="col" style="cursor: pointer; padding-top: 15px; color: #0062cc;">
+              <span (click)="showItemDetails(item, a)"><strong>Detalhar produto</strong></span>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary btn-lg active" (click)="openListModal(item);"><i class="fas fa-cart-plus"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -17,10 +31,10 @@
 
 <ng-template #addToListModal>
     <div class="modal-header" style="text-align: center">
-      <span>Atenção!</span>
+      <span style="color: red;"><strong>Atenção!</strong></span>
     </div>
     <div class="modal-body">
-      <p>Você deseja adicionar este item ao carrinho de compras?</p>
+      <p style="text-align: center;"><strong>Você deseja adicionar o item {{selectedProduct.nome}} ao carrinho de compras?</strong></p>
     </div>
     <div class="modal-footer">
       <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
@@ -30,11 +44,41 @@
 
 <ng-template #productDetailModal>
     <div class="modal-header" style="text-align: center">
-      {{selectedProduct.nome}}
+      <div>
+          <h1>{{selectedProduct.nome}}</h1>
+      </div>
     </div>
     <div class="modal-body">
-      {{selectedProduct.descricao}}
+      <div class="container" style="text-align: center;">
+        <div style="margin-bottom: 15px;">
+          <strong>{{selectedProduct.descricao}}</strong>
+        </div>
+        <div *ngIf="selectedProduct.imgPath">
+          <img src={{selectedProduct.imgPath}} style="max-width: 320px;">
+        </div>
+        <div *ngIf="!selectedProduct.imgPath">
+          <span style="color: red;"><strong>Esta imagem não está disponível</strong></span>
+        </div>
+        <div style="color: grey;margin-top: 15px">
+            <strong>Preço: R${{selectedProduct.preco}}</strong>
+        </div>
+        <div class="product-config">
+          <h3>Configurações do Produto</h3>
+        <div>
+            <strong>Processador: </strong>{{selectedProduct.configuracao.processador}}
+          </div>
+          <div>
+            <strong>Memória Ram: </strong>{{selectedProduct.configuracao.ram}}
+          </div>
+          <div>
+            <strong>Armazenamento: </strong>{{selectedProduct.configuracao.armazenamento}}
+          </div>
+          <div>
+            <strong>Tamanho da tela: </strong>{{selectedProduct.configuracao.tela}} polegadas
+          </div>
+      </div>
     </div>
+  </div>
     <div class="modal-footer">
       <button class="btn btn-outline-primary pull-left" (click)="closeModal()">Fechar</button>
     </div>

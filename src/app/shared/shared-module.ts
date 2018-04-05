@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 import { RouterModule } from '@angular/router';
 
 
@@ -19,10 +18,9 @@ import { RouterModule } from '@angular/router';
         FormsModule,
     ],
     declarations: [
-        // components
     ],
+
     providers: [
-        // services
     ]
 })
 

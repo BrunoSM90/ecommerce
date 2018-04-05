@@ -3,5 +3,6 @@ export class Product {
     nome: string;
     preco: number;
     descricao: string;
-    configuracao: string;
+    configuracao: any;
+    imgPath: any;
 }

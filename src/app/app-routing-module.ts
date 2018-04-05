@@ -1,4 +1,3 @@
-import { PaymentComponent } from './payment/payment.component';
 import { CanActivate } from '@angular/router/src/interfaces';
 import { AuthGuard } from './auth-guard.service';
 import { NgModule,  ModuleWithProviders } from '@angular/core';
@@ -14,7 +13,6 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent, canActivate: [AuthGuard] },
     {path: 'about', component: AboutComponent},
     {path: 'products', component: ProdutosComponent},
-    {path: 'payment', component: PaymentComponent}
    // {path: 'series', canActivate: [AuthGuard], canLoad: [AuthGuard], loadChildren: 'app/series/series-module#SeriesModule'},
 ];
 

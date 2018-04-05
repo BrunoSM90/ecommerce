@@ -6,14 +6,27 @@ import { Observable } from 'rxjs/Observable';
 export class ProductService {
 
 product_List: Product[] = [
-    {id: 1, nome: 'Macbook Air', preco: 5000, descricao: 'Velho', configuracao: ''},
-    {id: 2, nome: 'Asus XLS', preco: 2900, descricao: 'Velho', configuracao: ''},
-    {id: 3, nome: 'Itautec 2', preco: 2200, descricao: 'Novo', configuracao: ''},
-    {id: 4, nome: 'Avell pro 2', preco: 4200, descricao: 'Novo', configuracao: ''},
-    {id: 5, nome: 'Macbook Pro', preco: 4200, descricao: 'Novo', configuracao: ''},
-    {id: 6, nome: 'HP laserjet', preco: 4200, descricao: 'Novo', configuracao: ''},
-    {id: 7, nome: 'Itautec xsxs2', preco: 4200, descricao: 'Novo', configuracao: ''},
-    {id: 8, nome: 'Samsung X', preco: 4200, descricao: 'Novo', configuracao: ''},
+    // tslint:disable-next-line:max-line-length
+    {id: 1, imgPath: 'assets/images/notebook_id_1.png', nome: 'Dell i14 Inspiron', preco: 1919.00, descricao: 'Notebook modelo I14-5468-U10P',
+     configuracao: {ram: '4 GB', armazenamento: '1 TB', processador: 'Intel Core i3', tela: 14}},
+    // tslint:disable-next-line:max-line-length
+    {id: 2, imgPath: 'assets/images/notebook_id_2.jpg', nome: 'Acer Aspire', preco: 2199.00, descricao: 'Notebook modelo ES1-572-347R',
+    configuracao: {ram: '8 GB', armazenamento: '1 TB', processador: 'Intel Core i5', tela: 15.6}},
+    {id: 3, imgPath: 'assets/images/notebook_id_3.png', nome: 'Acer ES1', preco: 1900.00, descricao: 'Notebook Acer acessível',
+    configuracao: {ram: '4 GB', armazenamento: '500 GB', processador: 'Intel Core i3', tela: 15.6}},
+    // tslint:disable-next-line:max-line-length
+    {id: 4, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899.99, descricao: 'Notebook Dell Latitude modelo E5420',
+    configuracao: {ram: '4 GB', armazenamento: '320 GB', processador: 'Intel Core i3', tela: 14}},
+    // tslint:disable-next-line:max-line-length
+    {id: 5, imgPath: 'assets/images/notebook_id_5.png', nome: 'Lenovo Legion', preco: 5499.99, descricao: 'Notebook Gamer Lenovo modelo Y720',
+    configuracao: {ram: '8 GB', armazenamento: '2 TB', processador: 'Intel Core i7', tela: 15.6}},
+    {id: 6, imgPath: '', nome: 'HP Probook', preco: 1550.00, descricao: 'Notebook Hp Probook ',
+    configuracao: {ram: '8 GB', armazenamento: '500 GB', processador: 'Intel Core i7', tela: 14}},
+    {id: 7, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899.99, descricao: 'Notebook Dell Latitude',
+    configuracao: {ram: '4 GB', armazenamento: '250 GB', processador: 'Intel Core i3', tela: 14}},
+    // tslint:disable-next-line:max-line-length
+    {id: 8, imgPath: 'assets/images/notebook_id_8.jpg', nome: 'Samsung Pro', preco: 1951.58, descricao: 'Notebook Samsung Pro',
+    configuracao: {ram: '4 GB', armazenamento: '500 GB', processador: 'Intel Core i3', tela: 15.6}},
   ];
 
   tax_List: any[] = [
@@ -36,30 +49,40 @@ shoppingCart_List: any[] = [];
 
 constructor() { }
 
-getProducts() {
-  return this.product_List;
-}
+  getProducts() {
+    return this.product_List;
+  }
 
-addItemToCart(item) {
-  // verificar se o item já não está na lista com ID e indexOf.
- this.shoppingCart_List.push(item);
-}
+  getShoppingCartList() {
+    return this.product_List;
+  }
 
-getShoppingCartList() {
-  return this.product_List;
-}
+  getTaxList() {
+    return this.tax_List;
+  }
 
-getTaxList() {
-  return this.tax_List;
-}
+  /* Cart Services Start */
+  addItemToCart(item) {
+    let retorno;
+    const check = this.shoppingCart_List.indexOf(item);
+      if (check == -1) {
+        this.shoppingCart_List.push(item);
+        retorno = true;
+      } else {
+        retorno = false;
+      }
+
+    return retorno;
+  }
 
 removeItemFromCart(item) {
   this.product_List.map((next, index) => {
     if (next.id === item.id) {
-      console.log(index);
       this.product_List.splice(index, 1);
     }
   });
 }
+
+/* Cart Services End */
 
 }

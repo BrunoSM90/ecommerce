@@ -1,3 +1,4 @@
+import { ProductPipe } from './shared/pipes/product.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './auth-guard.service';
 import { LoginAuthService } from './login-auth.service';
@@ -14,7 +15,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './home/about/about.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './products/produtos/produtos.component';
-import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
 
 
@@ -27,8 +27,8 @@ import { CartComponent } from './cart/cart.component';
     AboutComponent,
     LoginComponent,
     ProdutosComponent,
-    PaymentComponent,
     CartComponent,
+    ProductPipe
   ],
   imports: [
     BrowserModule,
