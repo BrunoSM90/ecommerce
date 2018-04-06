@@ -31,8 +31,10 @@ export class ProdutosComponent implements OnInit {
   /* Variáveis privadas */
   private modalRef: NgbModalRef;
 
-  constructor(_productService: ProductService, private modalService: NgbModal) {
-    this.productService = _productService;
+  constructor(_productService: ProductService,
+              private modalService: NgbModal,) {
+
+              this.productService = _productService;
   }
 
   ngOnInit() {

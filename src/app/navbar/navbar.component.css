@@ -1,5 +1,5 @@
 .navbar-brand {
-    color: rgba(73, 202, 136, 0.9);
+    color: white;
 }
 
 .nav-item a {
@@ -18,6 +18,6 @@
 }
 
 .bg-navbar {
-    background-color: #699369;
+    background-color: #65b865;
     border-bottom: 1px solid;
 }
