@@ -5,26 +5,34 @@
     </div>
       <div class="col-4 product-input">
           <input class="form-control"
-          style="width: 76%"
+          style="width: 95%"
           type="text"
           placeholder="filtrar produto"
           [(ngModel)]="productFilter">
       </div>
   </div>
 
-  <div class="row">
-    <div *ngFor="let item of product_List | productPipe:productFilter; let a = index" class="col-xs-12 product-list">
+  <div class="row" style="width: 100%">
+    <div *ngFor="let item of product_List | productPipe:productFilter; let a = index" class="col-4 product-list">
       <div class="product-item">
-        <h3 style="cursor: pointer; color: white;" (click)="showItemDetails(item, a)">{{item.nome}}</h3>
-        <div class="row" style="color: #fff8d2; margin-bottom: 15px;">
+        <h2 style="cursor: pointer; color: black;" (click)="showItemDetails(item, a)">{{item.nome}}</h2>
+        <div class="row" style="color: black; margin-bottom: 15px;">
+          <div class="container">
+            <div *ngIf="item.imgPath">
+              <img src={{item.imgPath}} class="product-img">
+            </div>
+            <div *ngIf="!item.imgPath">
+              <img src="assets\images\cartoon-computer-3d.gif" class="product-img">
+            </div>
+          </div>
           <div class="col product-description">
-            <span>{{item.descricao}}</span>
+            <h2>{{item.descricao}}</h2>
           </div>
         </div>
-        <div style="color: #fff8d2">
+        <div style="color: black">
           <div class="row" style="padding-left: 30px;">
             <div class="col-4">
-                <span style="font-size: 25px">Preço: R${{item.preco}}</span>
+                <span style="font-size: 25px"><strong>Preço: R${{item.preco}}</strong></span>
             </div>
             <div class="col-4" style="cursor: pointer; color: #0062cc;">
               <span (click)="showItemDetails(item, a)" style="font-size: 23px;"><strong>Detalhar produto</strong></span>
@@ -71,7 +79,7 @@
     <div class="modal-body">
       <div class="container" style="text-align: center;">
         <div style="margin-bottom: 15px;">
-          <strong>{{selectedProduct.descricao}}</strong>
+          <h2>{{selectedProduct.descricao}}</h2>
         </div>
         <div *ngIf="selectedProduct.imgPath">
           <img src={{selectedProduct.imgPath}} style="max-width: 320px;">

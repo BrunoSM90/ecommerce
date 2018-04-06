@@ -11,25 +11,25 @@ static emitCartOperation = new EventEmitter();
 
 product_List: Product[] = [
     // tslint:disable-next-line:max-line-length
-    {id: 1, imgPath: 'assets/images/notebook_id_1.png', nome: 'Dell i14 Inspiron', preco: 1919.00, descricao: 'Notebook modelo I14-5468-U10P',
+    {id: 1, imgPath: 'assets/images/notebook_id_1.png', nome: 'Dell i14 Inspiron', preco: 1919, descricao: 'Notebook modelo I14-5468-U10P',
      configuracao: {ram: '4 GB', armazenamento: '1 TB', processador: 'Intel Core i3', tela: 14}},
     // tslint:disable-next-line:max-line-length
-    {id: 2, imgPath: 'assets/images/notebook_id_2.jpg', nome: 'Acer Aspire', preco: 2199.00, descricao: 'Notebook modelo ES1-572-347R',
+    {id: 2, imgPath: 'assets/images/notebook_id_2.jpg', nome: 'Acer Aspire', preco: 2199, descricao: 'Notebook modelo ES1-572-347R',
     configuracao: {ram: '8 GB', armazenamento: '1 TB', processador: 'Intel Core i5', tela: 15.6}},
-    {id: 3, imgPath: 'assets/images/notebook_id_3.png', nome: 'Acer ES1', preco: 1900.00, descricao: 'Notebook Acer acessível',
+    {id: 3, imgPath: 'assets/images/notebook_id_3.png', nome: 'Acer ES1', preco: 1900, descricao: 'Notebook Acer acessível',
     configuracao: {ram: '4 GB', armazenamento: '500 GB', processador: 'Intel Core i3', tela: 15.6}},
     // tslint:disable-next-line:max-line-length
-    {id: 4, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899.99, descricao: 'Notebook Dell Latitude modelo E5420',
+    {id: 4, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899, descricao: 'Notebook Dell Latitude modelo E5420',
     configuracao: {ram: '4 GB', armazenamento: '320 GB', processador: 'Intel Core i3', tela: 14}},
     // tslint:disable-next-line:max-line-length
-    {id: 5, imgPath: 'assets/images/notebook_id_5.png', nome: 'Lenovo Legion', preco: 5499.99, descricao: 'Notebook Gamer Lenovo modelo Y720',
+    {id: 5, imgPath: 'assets/images/notebook_id_5.png', nome: 'Lenovo Legion', preco: 5499, descricao: 'Notebook Gamer Lenovo modelo Y720',
     configuracao: {ram: '8 GB', armazenamento: '2 TB', processador: 'Intel Core i7', tela: 15.6}},
     {id: 6, imgPath: '', nome: 'HP Probook', preco: 1550.00, descricao: 'Notebook Hp Probook ',
     configuracao: {ram: '8 GB', armazenamento: '500 GB', processador: 'Intel Core i7', tela: 14}},
-    {id: 7, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899.99, descricao: 'Notebook Dell Latitude',
+    {id: 7, imgPath: 'assets/images/notebook_id_4.jpg', nome: 'Dell Latitude', preco: 899, descricao: 'Notebook Dell Latitude',
     configuracao: {ram: '4 GB', armazenamento: '250 GB', processador: 'Intel Core i3', tela: 14}},
     // tslint:disable-next-line:max-line-length
-    {id: 8, imgPath: 'assets/images/notebook_id_8.jpg', nome: 'Samsung Pro', preco: 1951.58, descricao: 'Notebook Samsung Pro',
+    {id: 8, imgPath: 'assets/images/notebook_id_8.jpg', nome: 'Samsung Pro', preco: 1951, descricao: 'Notebook Samsung Pro',
     configuracao: {ram: '4 GB', armazenamento: '500 GB', processador: 'Intel Core i3', tela: 15.6}},
   ];
 

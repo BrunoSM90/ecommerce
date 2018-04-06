@@ -16,3 +16,8 @@
     margin: 0;
     padding: 0;
 }
+
+.bg-navbar {
+    background-color: #699369;
+    border-bottom: 1px solid;
+}
