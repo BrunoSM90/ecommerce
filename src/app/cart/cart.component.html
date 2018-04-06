@@ -66,7 +66,11 @@
             <button (click)="closeModal()" class="btn btn-outline-danger modal-button">Fechar</button>
           </div>
           <div class="col">
-            <button (click)="doNothing()" [disabled]="cart_List.length == 0" class="btn btn-outline-primary modal-button" [style.cursor]="cart_List.length == 0 ? 'not-allowed' : 'default'">
+            <button
+            (click)="doNothing()" 
+            [disabled]="cart_List.length == 0"
+            class="btn btn-outline-primary modal-button"
+            [style.cursor]="cart_List.length == 0 ? 'not-allowed' : 'pointer'">
               <span>Finalizar compra</span>
             </button>
           </div>

@@ -102,7 +102,7 @@ export class CartComponent implements OnInit {
       this.modal_List.splice(this.modal_List.length - 1, 1);
       modalReference.close();
     }
-    
+
     if (this.frete) {
       this.frete = 0;
     }
